@@ -1,0 +1,55 @@
+{
+  "name": "touch-image",
+  "productName": "touch-image",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": ".vite/build/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron-forge/plugin-vite": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "electron": "30.0.6",
+    "sass": "^1.77.2",
+    "sass-loader": "^14.2.1",
+    "vite": "^5.0.12",
+    "vite-plugin-commonjs": "^0.10.1"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "electron-squirrel-startup": "^1.0.1",
+    "element-plus": "^2.7.3",
+    "file-system": "^2.2.2",
+    "fs-extra": "^11.2.0",
+    "imagemin": "^9.0.0",
+    "imagemin-jpeg-recompress": "^7.1.0",
+    "imagemin-pngquant": "^10.0.0",
+    "lodash-es": "^4.17.21",
+    "pretty-bytes": "^6.1.1",
+    "vue": "^3.4.27",
+    "webp-converter": "^2.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/demoon84/touch-image"
+  },
+  "keywords": [],
+  "author": {
+    "email": "demoon84@gmail.com",
+    "name": "문경태(kyungtae Moon)"
+  },
+  "license": "MIT"
+}
