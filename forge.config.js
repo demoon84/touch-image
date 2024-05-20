@@ -1,28 +1,61 @@
 const {FusesPlugin} = require('@electron-forge/plugin-fuses');
 const {FuseV1Options, FuseVersion} = require('@electron/fuses');
+const path = require("path");
+
 
 module.exports = {
 	packagerConfig: {
 		asar: true,
+		icon: path.join(__dirname, 'src/assets/icons/app')
 	},
 	rebuildConfig: {},
 	makers: [
 		{
 			name: '@electron-forge/maker-squirrel',
-			config: {},
+			config: {
+				setupIcon: path.join(__dirname, 'src/assets/icons/app.ico'),
+			},
 		},
 		{
 			name: '@electron-forge/maker-zip',
 			platforms: ['darwin'],
+			config: {
+				icon: path.join(__dirname, 'src/assets/icons/app.icns'),
+			},
+		},
+		{
+			name: '@electron-forge/maker-dmg',
+			config: {
+				format: 'ULFO',
+				icon: path.join(__dirname, 'src/assets/icons/app.icns'),
+			}
 		},
 		{
 			name: '@electron-forge/maker-deb',
-			config: {},
+			config: {
+				icon: path.join(__dirname, 'src/assets/icons/app-256x256.png'),  // Linux 아이콘
+			},
 		},
 		{
 			name: '@electron-forge/maker-rpm',
-			config: {},
+			config: {
+				icon: path.join(__dirname, 'src/assets/icons/app-256x256.png'),  // Linux 아이콘
+			},
 		},
+	],
+	"publishers": [
+		{
+			"name": "@electron-forge/publisher-github",
+			"config": {
+				"repository": {
+					"owner": "demoon84",
+					"name": "touch-image"
+				},
+				"prerelease": false,
+				"draft": true,
+				"authToken": "${process.env.GITHUB_TOKEN}"
+			}
+		}
 	],
 	plugins: [
 		{
