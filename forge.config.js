@@ -5,10 +5,9 @@ const path = require("path");
 
 module.exports = {
 	packagerConfig: {
-		asar: true,
+		asar: false,
 		icon: path.join(__dirname, 'src/assets/icons/app')
 	},
-	rebuildConfig: {},
 	makers: [
 		{
 			name: '@electron-forge/maker-squirrel',
@@ -24,13 +23,6 @@ module.exports = {
 			},
 		},
 		{
-			name: '@electron-forge/maker-dmg',
-			config: {
-				format: 'ULFO',
-				icon: path.join(__dirname, 'src/assets/icons/app.icns'),
-			}
-		},
-		{
 			name: '@electron-forge/maker-deb',
 			config: {
 				icon: path.join(__dirname, 'src/assets/icons/app-256x256.png'),  // Linux 아이콘
@@ -43,7 +35,7 @@ module.exports = {
 			},
 		},
 	],
-	"publishers": [
+	publishers: [
 		{
 			"name": "@electron-forge/publisher-github",
 			"config": {
@@ -91,7 +83,7 @@ module.exports = {
 			[FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
 			[FuseV1Options.EnableNodeCliInspectArguments]: false,
 			[FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
-			[FuseV1Options.OnlyLoadAppFromAsar]: true,
+			[FuseV1Options.OnlyLoadAppFromAsar]: false,
 		}),
 	],
 };
