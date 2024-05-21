@@ -5,5 +5,5 @@
 * PNG, JPG Optimize
 
 
-![Alt text of the image](https://github.com/demoon84/touch-image/blob/master/preview.png)
+![Alt text of the image](https://github.com/demoon84/touch-image/blob/main/preview.png)
 
