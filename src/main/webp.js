@@ -9,7 +9,7 @@ let forEach, win_webp;
 
 (async () => {
 	forEach = (await import('lodash-es')).default.forEach;
-	win_webp = (await import('./win-webpmux-animate')).default.win_webp;
+	win_webp = (await import('./win-webpmux-animate.js'));
 })();
 
 let outputDirectory = `${os.homedir()}/Desktop/webp`;
